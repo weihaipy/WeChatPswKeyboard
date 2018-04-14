@@ -64,6 +64,11 @@ public class PopEnterPassword extends PopupWindow {
                                 dismiss();
 
                                 Toast.makeText(mContext, "支付成功，密码为：" + password, Toast.LENGTH_SHORT).show();
+                                // 输入密码后的跳转和传参
+                                Intent intent = new Intent();
+                                intent.setClass(context, YourActivityToGo.class);
+                                intent.putExtra("password", password);
+                                context.startActivity(intent);
                             }
                         });
                     }
